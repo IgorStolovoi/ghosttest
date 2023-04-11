@@ -1,0 +1,167 @@
+{
+	"name": "media",
+	"description": "media platform",
+	"demo": "https://google.com",
+	"version": "5.4.7",
+	"engines": {
+		"ghost": ">=5.0.0"
+	},
+	"license": "MIT",
+	"screenshots": {
+		"desktop": "assets/screenshot-desktop.jpg",
+		"mobile": "assets/screenshot-mobile.jpg"
+	},
+	"scripts": {
+		"dev": "gulp",
+		"zip": "gulp zip",
+		"test": "gscan .",
+		"test:ci": "gscan --fatal --verbose .",
+		"build": "gulp build",
+		"preship": "yarn test"
+	},
+	"author": {
+		"name": "author",
+		"email": "test@gmail.com"
+	},
+	"gpm": {
+		"type": "theme",
+		"categories": [
+			"Minimal",
+			"Magazine"
+		]
+	},
+	"keywords": [
+		"ghost",
+		"theme",
+		"ghost-theme"
+	],
+	"devDependencies": {
+		"@tryghost/release-utils": "0.8.1",
+		"beeper": "2.1.0",
+		"browser-sync": "^2.29.1",
+		"cssnano": "5.1.12",
+		"gscan": "4.34.0",
+		"gulp": "4.0.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-clean": "^0.4.0",
+		"gulp-concat": "2.6.1",
+		"gulp-imagemin": "^7.1.0",
+		"gulp-sass": "^5.1.0",
+		"gulp-uglify": "3.0.2",
+		"gulp-zip": "5.1.0",
+		"inquirer": "8.2.4",
+		"postcss-color-mod-function": "3.0.3",
+		"postcss-easy-import": "4.0.0",
+		"pump": "3.0.0",
+		"sass": "^1.60.0"
+	},
+	"browserslist": [
+		"defaults"
+	],
+	"config": {
+		"posts_per_page": 24,
+		"image_sizes": {
+			"xxs": {
+				"width": 30
+			},
+			"xs": {
+				"width": 100
+			},
+			"s": {
+				"width": 300
+			},
+			"m": {
+				"width": 600
+			},
+			"l": {
+				"width": 1000
+			},
+			"xl": {
+				"width": 2000
+			}
+		},
+		"card_assets": true,
+		"custom": {
+			"slider_1_text": {
+				"type": "text",
+				"default": "",
+				"group": "homepage"
+			},
+			"slider_2_text": {
+				"type": "text",
+				"default": "",
+				"group": "homepage"
+			},
+			"slider_3_text": {
+				"type": "text",
+				"default": "",
+				"group": "homepage"
+			},
+			"slider_4_text": {
+				"type": "text",
+				"default": "",
+				"group": "homepage"
+			},
+			"slider_5_text": {
+				"type": "text",
+				"default": "",
+				"group": "homepage"
+			},
+			"slider_1_image": {
+				"type": "image",
+				"group": "homepage"
+			},
+			"slider_2_image": {
+				"type": "image",
+				"group": "homepage"
+			},
+			"slider_3_image": {
+				"type": "image",
+				"group": "homepage"
+			},
+			"slider_4_image": {
+				"type": "image",
+				"group": "homepage"
+			},
+			"slider_5_image": {
+				"type": "image",
+				"group": "homepage"
+			},
+			"slider_1_link": {
+				"type": "text",
+				"default": "/",
+				"group": "homepage"
+			},
+			"slider_2_link": {
+				"type": "text",
+				"default": "/",
+				"group": "homepage"
+			},
+			"slider_3_link": {
+				"type": "text",
+				"default": "/",
+				"group": "homepage"
+			},
+			"slider_4_link": {
+				"type": "text",
+				"default": "/",
+				"group": "homepage"
+			},
+			"slider_5_link": {
+				"type": "text",
+				"default": "/",
+				"group": "homepage"
+			},
+			"show_recent_posts_footer": {
+				"type": "boolean",
+				"default": true,
+				"group": "post"
+			}
+		}
+	},
+	"renovate": {
+		"extends": [
+			"@tryghost:theme"
+		]
+	}
+}

@@ -1,0 +1,19 @@
+<section class="site-news site-content-section">
+	<div class="container">
+		<h3 class="site-title">Новини</h3>
+		<div class="site-posts-inner">
+			{{#get "posts"  include="tags,authors" filter="tags:news" limit="3"}}
+				{{#foreach posts}}
+					{{> "post-card"}}
+				{{/foreach}}
+			{{/get}}
+		</div>
+		<a
+			href="/tag/news"
+			class="site-main-action-button site-section-action-button"
+		>
+			<span>Всі Новини</span>
+        	<img src={{asset "built/images/icons/header-right-black-arrow.svg"}} alt="right arrow icon">
+		</a>
+	</div>
+</section>

@@ -1,0 +1,118 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.registration-popup {
+	max-width: 500px;
+	width: 100%;
+	padding: 90px 60px 40px;
+	background-color: $main-white-color;
+	border-radius: $base-element-border-radius;
+	overflow: hidden;
+	position: relative;
+	&-top {
+		width: 100%;
+		font-size: 32px;
+		line-height: 39px;
+		text-align: center;
+		margin-bottom: 50px;
+		span {
+			margin-bottom: 12px;
+		}
+		img {
+			display: inline-block;
+		}
+	}
+	&-bottom {
+		width: 100%;
+		font-size: 14px;
+		line-height: 20px;
+		text-align: left;
+		color: $secondary-text-color;
+		a {
+			color: $secondary-text-color;
+			text-decoration: underline;
+		}
+	}
+	&-buttons {
+		width: 100%;
+		margin-bottom: 25px;
+	}
+	.close-button {
+		position: absolute;
+		top: 20px;
+		right: 24px;
+	}
+}
+.social-media-registration-button {
+	display: flex;
+	width: 100%;
+	margin-bottom: 30px;
+	padding: 11px 30px 11px 20px;
+	border-radius: $button-border-radius;
+	overflow: hidden;
+	font-size: 20px;
+	line-height: 24px;
+	text-align: left;
+	position: relative;
+	@include main-action-button-border;
+	@include base-transition;
+	&-icon {
+		margin-right: 14px;
+	}
+	&-arrow {
+		position: absolute;
+		top: 12px;
+		right: 7px;
+		opacity: 0;
+		@include base-transition;
+	}
+	&:hover {
+		background-color: $action-button-hover-bg;
+		.social-media-registration-button-arrow {
+			opacity: 1;
+		}
+	}
+}
+
+.substrate-layer {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: $substrate-layer-bg;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	z-index: 60;
+	@include base-transition;
+	&.registration-substrate-layer.open,
+	&.signin-substrate-layer.open {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+
+.close-button {
+	display: block;
+	padding: 0;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: $base-element-border-radius;
+	@include base-transition;
+	&:hover {
+		background-color: $action-button-hover-bg;
+	}
+	img {
+		pointer-events: none;
+		max-width: 24px;
+		width: 100%;
+	}
+}

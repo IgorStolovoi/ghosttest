@@ -1,0 +1,5 @@
+/content/logs/
+/content/themes/casper/node_modules/
+/current/node_modules/
+
+.env

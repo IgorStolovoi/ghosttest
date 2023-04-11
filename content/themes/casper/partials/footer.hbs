@@ -1,0 +1,64 @@
+<footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="container">
+            <div class="footer-inner-top">
+                <a class="footer-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}"> 
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+            <div class="footer-connection">
+                <div class="footer-contacts">
+                    <span class="footer-contacts-text">Контакти:</span>
+                    <a href="tel:+380111111111" class="footer-contacts-link">
+                        <img src="{{asset 'built/images/icons/footer-phone-icon.svg'}}" alt="phone icon">
+                        <span>+38011 111 11 11</span>
+                    </a>
+                    <a href="mailto:email@email.com" class="footer-contacts-link">
+                        <img src="{{asset 'built/images/icons/footer-envelope-icon.svg'}}" alt="envelope icon">
+                        <span>email@email.com</span>
+                    </a>
+                </div>
+                <ul class="footer-social">
+                    <li class="footer-social-item">
+                        <a class="footer-social-link" href="#">
+                        {{> "icons/footer-facebook-icon"}}
+                        </a>
+                    </li>
+                    <li class="footer-social-item">
+                        <a class="footer-social-link" href="#">
+                            {{> "icons/footer-instagram-icon"}}
+                        </a>
+                    </li>
+                    <li class="footer-social-item">
+                        <a class="footer-social-link" href="#">
+                         {{> "icons/footer-twitter-icon"}}
+                        </a>
+                    </li>
+                    <li class="footer-social-item">
+                        <a class="footer-social-link" href="#">
+                         {{> "icons/footer-telegram-icon"}}
+                        </a>
+                    </li>
+                    <li class="footer-social-item">
+                        <a class="footer-social-link" href="#">
+                        {{> "icons/footer-youtube-icon"}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+   				<a href="/zaproponuvati-stattiu/" class="main-action-button main-action-button-accent">
+                    <span>Запропонувати статтю</span>
+        	         <img src={{asset "built/images/icons/header-right-white-arrow.svg"}} alt="right arrow icon">
+                </a>
+            </div>
+                <div class="footer-inner-bottom">
+                <a class="footer-copyright" href="{{@site.url}}">&copy; Copyright information {{date format="YYYY"}}</a>
+                <a class="footer-privacy-policy" href="#">Privacy Policy</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </footer>

@@ -1,0 +1,19 @@
+<section class="site-blogs site-content-section">
+	<div class="container">
+		<h3 class="site-title">Блоги</h3>
+		<div class="site-posts-inner">
+			{{#get "posts"  include="tags,authors" filter="tags:blogs" limit="3"}}
+				{{#foreach posts}}
+					{{> "post-card"}}
+				{{/foreach}}
+			{{/get}}
+		</div>
+		<a
+			href="/tag/blogs"
+			class="site-main-action-button site-section-action-button"
+		>
+			<span>Всі Блоги</span>
+        	<img src={{asset "built/images/icons/header-right-black-arrow.svg"}} alt="right arrow icon">
+		</a>
+	</div>
+</section>

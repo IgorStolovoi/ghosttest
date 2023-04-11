@@ -1,0 +1,9 @@
+<nav class="pagination" role="navigation">
+	{{#if prev}}
+		<a class="newer-posts" href="{{page_url prev}}">&larr; Наступна</a>
+	{{/if}}
+	<span class="page-number">Сторінка {{page}} з {{pages}}</span>
+	{{#if next}}
+		<a class="older-posts" href="{{page_url next}}">Попередня &rarr;</a>
+	{{/if}}
+</nav>

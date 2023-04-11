@@ -1,0 +1,30 @@
+	<section class="site-articles">
+		<div class="container">
+			<h3 class="site-title">Статті</h3>
+		</div>
+		<div class="site-posts-wrapper">
+			<div class="container">
+				{{#get "posts" filter="tags:articles" include="tags,authors,comments" limit="1"}}
+					{{#foreach posts}}
+						{{> "post-cards/big-article-card"}}
+					{{/foreach}}
+				{{/get}}
+
+				<div class="site-posts-inner">
+					{{#get "posts" filter="tags:articles" include="tags,authors,comments" limit="4" }}
+						{{#foreach posts}}
+							{{> "post-card"}}
+						{{/foreach}}
+					{{/get}}
+				</div>
+   					<a 
+					href="/tag/articles/" 
+					class="site-main-action-button site-section-action-button "
+					>
+						<span>Всі Статті</span>
+        				<img src={{asset "built/images/icons/header-right-black-arrow.svg"}} alt="right arrow icon">
+					</a>
+			</div>
+		</div>
+	</section>
+	

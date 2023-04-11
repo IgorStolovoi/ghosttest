@@ -1,0 +1,23 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+<main id="site-main" class="site-main outer">
+
+    <div class="site-posts-group">
+        <div class="container">
+            {{#tag}}
+            <section class="site-posts-group-wrapper">
+                <ul class="site-breadcrumbs">
+	                <li class="site-breadcrumbs-item"><a href="{{@site.url}}">Головна</a></li>
+                    <li class="site-breadcrumbs-item">{{name}}</li>
+                </ul>
+                    <h2 class="site-title">{{name}}</h2>
+                {{/tag}}
+                <div class="site-posts-inner">
+                    {{#foreach posts include="tags,authors"}}
+                        {{> "post-card"}}
+                    {{/foreach}}
+                </div>
+            </section>
+        </div> 
+    </div>
+</main>

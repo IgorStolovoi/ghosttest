@@ -1,0 +1,33 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.site-breadcrumbs {
+	display: flex;
+	font-size: 14px;
+	line-height: 17px;
+	margin-bottom: 35px;
+	&-item {
+		display: inline-block;
+		overflow: hidden;
+		max-width: 330px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	&-item:not(:last-child) {
+		&::after {
+			content: "/";
+			display: inline-block;
+			margin-right: 9px;
+			margin-left: 9px;
+			color: $secondary-text-color;
+		}
+		a {
+			color: $accent-color;
+		}
+	}
+	&-item:last-child {
+		a {
+			color: $breadcurmbs-last-item-text-color;
+		}
+	}
+}

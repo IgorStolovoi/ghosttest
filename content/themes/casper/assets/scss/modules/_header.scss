@@ -1,0 +1,199 @@
+@import "../base/variables";
+@import "../base//mixins";
+
+.gh-head {
+	position: fixed;
+	min-height: 90px;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 50;
+	background-color: $main-white-color;
+	border-bottom: 1px solid $header-border-bg;
+	&-brand {
+		margin-right: 47px;
+		max-width: 157px;
+		flex-shrink: 0;
+	}
+	&-search {
+		max-width: 28px;
+		margin-right: auto;
+		margin-left: 10px;
+		flex-shrink: 0;
+	}
+	&-inner {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding-top: 17px;
+		padding-bottom: 17px;
+	}
+	&-navigation {
+		display: flex;
+		align-items: center;
+		.nav {
+			display: flex;
+			justify-content: space-between;
+			margin-right: 15px;
+		}
+		.nav li {
+			font-size: 16px;
+			line-height: 19.5px;
+			position: relative;
+			padding-right: 8px;
+			padding-left: 8px;
+		}
+		.nav li + li {
+			margin-left: 25px;
+		}
+		.nav li::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 47px;
+			height: 3px;
+			border-radius: 4px;
+			background-color: transparent;
+			bottom: -8px;
+			left: 50%;
+			transform: translateX(-50%);
+			@include base-transition;
+		}
+		.nav li.nav-current::before,
+		.nav li:hover::before {
+			background-color: $accent-color;
+		}
+		.nav li.nav-current:last-of-type::before {
+			background-color: transparent;
+		}
+		.nav li.nav-current:last-of-type:hover:before {
+			background-color: $accent-color;
+		}
+	}
+	&-side-box {
+		display: flex;
+		padding: 13px 10px;
+		background-color: $header-side-box-bg;
+		border-radius: 6px;
+		margin-right: 0;
+	}
+	&-actions {
+		button:not(:last-child) {
+			margin-right: 15px;
+		}
+	}
+	&-button {
+		padding: 8px 16px 8px 20px;
+		min-width: 70px;
+		border-radius: 6px;
+		background-color: transparent;
+		font-size: 14px;
+		line-height: 18px;
+		@include base-semibold-text;
+		@include base-transition;
+		img {
+			display: inline-block;
+			margin-right: 0;
+			margin-left: 10px;
+			opacity: 0;
+			width: 0px;
+			@include base-transition;
+		}
+	}
+	&-button:disabled {
+		@include disabled-button-styles;
+		img {
+			display: none;
+		}
+	}
+	&-button-accent {
+		color: $main-white-color;
+		background-color: $accent-color;
+		border: 1px solid $accent-color;
+		transition: all 0.5s;
+		@include base-transition;
+	}
+	&-button-light {
+		color: $primary-text-color;
+		border: 1px solid $main-black-color;
+		transition: all 0.5s;
+		@include base-transition;
+	}
+	&-button-accent:hover,
+	&-button-light:hover {
+		@include base-transition;
+		img {
+			opacity: 1;
+			width: 14px;
+		}
+	}
+	&-member {
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
+		position: relative;
+	}
+	&-member-avatar {
+		width: 34px;
+		height: 34px;
+		border-radius: 50%;
+		border: 1px solid $main-black-color;
+		margin-right: 8px;
+	}
+	&-member-popup {
+		display: none;
+		position: absolute;
+		right: -10px;
+		top: 50px;
+		background-color: $main-white-color;
+		min-width: 220px;
+		max-width: 250px;
+		border-radius: $base-element-border-radius;
+	}
+	&-member-popup.open {
+		display: block;
+	}
+
+	&-member-button {
+		img {
+			pointer-events: none;
+		}
+	}
+
+	&-member-button.open {
+		transform: rotate(180deg);
+	}
+
+	&-member-popup-link {
+		display: block;
+		padding: 12px;
+		font-size: 14px;
+		line-height: 17px;
+		display: flex;
+		align-items: center;
+		svg {
+			margin-right: 10px;
+		}
+		&:hover {
+			color: $accent-color;
+			svg path {
+				stroke: $accent-color;
+			}
+			svg circle {
+				stroke: $accent-color;
+			}
+		}
+	}
+	&-member-popup-link:first-child {
+		border-bottom: 1px solid $decoration-border-bg;
+	}
+}
+
+iframe[title="portal-popup"] {
+	html {
+		display: none;
+	}
+	// h1.uppercase.text-xs.text-neutral-400.font-semibold.mb-1.tracking-wide {
+	// 	display: none !important;
+	// }
+}

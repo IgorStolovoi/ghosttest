@@ -1,0 +1,59 @@
+<header id="gh-head" class="gh-head {{#get primary_tag}} {{#primary_tag}}{{slug}}{{/primary_tag}} {{/get}}">
+    <div class="container">
+        <div class="gh-head-inner">
+            <div class="gh-head-brand">
+                <a class="gh-head-logo{{#unless @site.logo}} no-image{{/unless}}" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+                <button class="gh-burger"></button>
+            </div>
+            <div class="gh-head-side-box">
+                <nav class="gh-head-navigation">
+                    {{navigation}}
+                </nav>
+                <a href="/zaproponuvati-stattiu/" class="main-action-button main-action-button-accent">
+                    <span> Запропонувати статтю </span>
+                    <img src={{asset "built/images/icons/header-right-white-arrow.svg"}} alt="right arrow icon">
+                </a>
+            </div>
+            <a id="head-search-button" class="gh-head-search" href="/#/search/">
+                <img src={{asset "built/images/icons/header-search-icon.svg"}} alt="search icon">
+            </a> 
+            <div class="gh-head-auth-box">
+                                {{#if @member}} 
+                   <div class="gh-head-member">
+                        <img class="gh-head-member-avatar" src="{{#if @member.avatar}}{{@member.avatar}}{{else}}{{asset "built/images/header-member-avatar.svg"}}{{/if}}" alt="member avatar">
+                        <button id="header-member-button" class="gh-head-member-button">
+                            <img src="{{asset 'built/images/icons/header-arrow-down-icon.svg'}}" alt="arrow button">
+                        </button>
+                        <div id="header-member-popup" class="gh-head-member-popup">
+                            <a class="gh-head-member-popup-link" href="/tag/news/" >
+                                {{> "icons/header-avatar-icon"}}
+                                <span>Переглянути профіль</span>
+                            </a>
+                            <a class="gh-head-member-popup-link" href="javascript:" data-members-signout>
+                                {{> "icons/header-logout-icon"}}
+                                <span>Вийти</span>
+                            </a>
+                        </div>
+                    </div>
+                {{else}}
+                    <div class="gh-head-actions">
+                        <button id="gh-head-signin-button" class="main-action-button main-action-button-accent">
+                            <span> Вхід </span>
+                            <img src={{asset "built/images/icons/header-right-white-arrow.svg"}} alt="right arrow icon">
+                        </button>
+                        <button id="gh-head-registration-button" class="main-action-button main-action-button-light">
+                            <span> Реєстрація </span>
+                            <img src={{asset "built/images/icons/header-right-black-arrow.svg"}} alt="right arrow icon">
+                        </button> 
+                    </div>
+                {{/if}}
+            </div>
+        </div> 
+    </div>        
+</header>

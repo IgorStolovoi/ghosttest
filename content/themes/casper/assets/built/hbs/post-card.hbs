@@ -1,0 +1,44 @@
+<div class="site-post-card {{#if primary_tag}}{{#primary_tag}}{{slug}}{{/primary_tag}}{{/if}}">
+	<div class="site-post-card-date"> 
+        <time datetime=datetime="{{date format="DD-MM-YYYY"}}">{{date published_at format="DD MMMM, YYYY"}}</time>
+    </div>
+	<div class="site-post-card-img">
+        {{#if feature_image}}
+            <img
+                srcset="{{img_url feature_image size="s"}} 300w,
+                {{img_url feature_image size="m"}} 600w,
+                {{img_url feature_image size="l"}} 1000w,
+                {{img_url feature_image size="xl"}} 2000w"
+                sizes="(max-width: 1000px) 400px, 800px"
+                src="{{img_url feature_image size="m"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                loading="lazy"
+            />
+        {{/if}}
+    </div> 
+	<a href="{{url}}" class="site-post-card-title">{{title  limit="2"}}</a>
+        <div class="site-post-card-additional-info">
+                        {{#if primary_author}}
+                            {{#primary_author}}
+			                    <a href="{{url}}" class="site-post-card-author">
+                                    {{#if profile_image}}
+                                        <img src="{{profile_image}}" alt="author avatar">
+                                    {{else}}
+                                        <span class="site-post-card-avatar-name">{{name.[0]}}</span>
+                                    {{/if}}
+                                    <span>{{name}}</span>
+                                {{/primary_author}}
+                            {{/if}}
+                        </a>
+                        {{#if @site.comments_enabled}}
+                            {{#if comments}}
+			                    <div class="site-post-card-comments">
+				                    <img src={{asset "built/images/icons/message-icon.svg"}} alt="comment icon">
+                                    <span> {{comment_count}}</span>                               
+			                    </div>
+                            {{/if}}
+                        {{/if}}
+        </div>
+	<p class="site-post-card-text">{{excerpt words="20"}}...</p>
+	<a href="{{url}}" class="site-post-card-link"><span>Читати</span>{{> "icons/right-arrow-icon"}}</a>
+</div>

@@ -1,0 +1,18 @@
+{{!< default}}
+{{! The tag above means: insert everything in this file
+into the {body} of the default.hbs template }}
+
+<div class="site-header-content-wrapper">
+	<div class="container">
+		<div class="site-header-carousel">
+		{{> "slider"}}
+		</div>
+	</div>
+</div>
+
+{{! The main content area }}
+<main id="site-main" class="site-main">
+	{{> "news-section"}}
+	{{> "articles-section"}}
+	{{> "blogs-section"}}
+</main>

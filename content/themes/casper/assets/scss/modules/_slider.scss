@@ -1,0 +1,40 @@
+@import "../base/variables";
+
+.site-header-carousel {
+	width: 100%;
+	position: relative;
+	.site-header-content {
+		max-height: 468px;
+		height: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		border-radius: $images-border-radius;
+	}
+	.swiper-pagination-bullet {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background-color: $slider-dots-bg;
+	}
+	.swiper-pagination-bullet.swiper-pagination-bullet-active {
+		background-color: $main-black-color;
+	}
+	.swiper-horizontal > .swiper-pagination-bullets,
+	.swiper-pagination-bullets.swiper-pagination-horizontal,
+	.swiper-pagination-custom,
+	.swiper-pagination-fraction {
+		width: fit-content;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 2px 8px;
+		background: $slider-dots-list-bg;
+		border-radius: 11px;
+		bottom: 10px;
+	}
+	.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+	.swiper-pagination-horizontal.swiper-pagination-bullets
+		.swiper-pagination-bullet {
+		margin: 0 8px;
+	}
+}

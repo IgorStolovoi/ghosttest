@@ -1,0 +1,26 @@
+{
+	"url": "http://3005.frontend.zeus.nixdev.co",
+	"server": {
+		"port": 3005,
+		"host": "127.0.0.1"
+	},
+	"database": {
+		"client": "mysql",
+		"connection": {
+			"host": "localhost",
+			"user": "ulshin",
+			"password": "vFXrJBTBGVu1YoYdVZoq",
+			"database": "ulshin_ghost_proit"
+		}
+	},
+	"mail": {
+		"transport": "Direct"
+	},
+	"logging": {
+		"transports": ["file", "stdout"]
+	},
+	"process": "local",
+	"paths": {
+		"contentPath": "/home/ulshyn/media-platform/content"
+	}
+}

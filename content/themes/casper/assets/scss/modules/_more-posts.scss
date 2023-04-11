@@ -1,0 +1,18 @@
+.more-posts {
+	width: 100%;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	border-bottom: 1px solid $more-poste-border-bg;
+	border-top: 1px solid $more-poste-border-bg;
+	&-title {
+		font-size: 22px;
+		line-height: 32px;
+		margin-bottom: 30px;
+		@include base-bold-text;
+	}
+	&-inner {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(200px, 407px));
+		gap: 25px 45px;
+	}
+}

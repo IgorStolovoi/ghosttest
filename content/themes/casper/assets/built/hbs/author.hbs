@@ -1,0 +1,33 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+<main id="site-main" class="site-main outer">
+<div class="inner posts">
+
+    <div class="post-feed">
+
+        {{#primary_author}}
+        <section class="post-card post-card-large">
+
+
+            <div class="post-card-content">
+            <div class="post-card-content-link">
+
+                {{#if profile_image}}
+                    <img class="author-profile-pic" src="{{profile_image}}" alt="{{name}}" />
+                {{/if}}
+                    <h2 class="post-card-title">{{name}}</h2>
+
+            </div>
+            </div>
+
+        </section>
+        {{/primary_author}}
+        {{#get "posts" filter="tag:-news"}}
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+        {{/get}}
+    </div>    
+</div>
+</main>

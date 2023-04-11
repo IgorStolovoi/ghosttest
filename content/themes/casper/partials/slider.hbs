@@ -1,0 +1,71 @@
+<!-- Slider main container -->
+<div class="swiper">
+	<div class="swiper-wrapper">
+		{{#if @custom.slider_1_image}}
+			<a
+				href="{{@custom.slider_1_link}}"
+				class="swiper-slide site-header-content"
+				style="background-image: url({{img_url @custom.slider_1_image}});"
+			>
+				<div class="site-header-inner">
+					{{#if @custom.slider_1_text}}
+						<p class="site-description">{{@custom.slider_1_text}}</p>
+					{{/if}}
+				</div>
+			</a>
+		{{/if}}
+		{{#if @custom.slider_2_image}}
+			<a
+				href="{{@custom.slider_2_link}}"
+				class="swiper-slide site-header-content"
+				style="background-image: url({{img_url @custom.slider_2_image}});"
+			>
+				<div class="site-header-inner">
+					{{#if @custom.slider_2_text}}
+						<p class="site-description">{{@custom.slider_2_text}}</p>
+					{{/if}}
+				</div>
+			</a>
+		{{/if}}
+		{{#if @custom.slider_3_image}}
+			<a
+				href="{{@custom.slider_3_link}}"
+				class="swiper-slide site-header-content"
+				style="background-image: url({{img_url @custom.slider_3_image}});"
+			>
+				<div class="site-header-inner">
+					{{#if @custom.slider_3_text}}
+						<p class="site-description">{{@custom.slider_3_text}}</p>
+					{{/if}}
+				</div>
+			</a>
+		{{/if}}
+		{{#if @custom.slider_4_image}}
+			<a
+				href="{{@custom.slider_4_link}}"
+				class="swiper-slide site-header-content"
+				style="background-image: url({{img_url @custom.slider_4_image}});"
+			>
+				<div class="site-header-inner">
+					{{#if @custom.slider_4_text}}
+						<p class="site-description">{{@custom.slider_4_text}}</p>
+					{{/if}}
+				</div>
+			</a>
+		{{/if}}
+		{{#if @custom.slider_5_image}}
+			<a
+				href="{{@custom.slider_5_link}}"
+				class="swiper-slide site-header-content"
+				style="background-image: url({{img_url @custom.slider_5_image}});"
+			>
+				<div class="site-header-inner">
+					{{#if @custom.slider_5_text}}
+						<p class="site-description">{{@custom.slider_5_text}}</p>
+					{{/if}}
+				</div>
+			</a>
+		{{/if}}
+	</div>
+	<div class="swiper-pagination"></div>
+</div>

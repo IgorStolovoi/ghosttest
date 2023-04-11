@@ -1,0 +1,88 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.footer {
+	background-color: $main-white-color;
+	padding-top: 100px;
+	.site-footer-action-button {
+		font-size: 14px;
+		line-height: 17px;
+		padding: 5px 15px;
+		min-width: 50px;
+		display: inline-flex;
+		align-items: center;
+	}
+	&-inner-top {
+		padding-bottom: 45px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+	}
+	&-inner-top::after {
+		content: "";
+		position: absolute;
+		height: 1px;
+		background-color: $footer-decoration-row-bg;
+		bottom: 0;
+		right: -50vw;
+		left: -50vw;
+	}
+	&-inner-bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 27px;
+		padding-bottom: 33px;
+	}
+	&-social {
+		display: flex;
+		width: fit-content;
+	}
+	&-social-link {
+		margin-right: 15px;
+		width: 24px;
+		height: 24px;
+		overflow: hidden;
+		border-radius: $base-element-border-radius;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid $main-black-color;
+		&:hover {
+			border: 1px solid $accent-color;
+			svg path {
+				stroke: $accent-color;
+			}
+		}
+	}
+	&-logo {
+		img {
+			max-width: 115px;
+		}
+	}
+	&-connection {
+		display: flex;
+		align-items: center;
+	}
+	&-contacts {
+		display: flex;
+		align-items: center;
+		margin-right: 70px;
+		font-size: 17px;
+		line-height: 21px;
+		span {
+			margin-right: 20px;
+		}
+	}
+	&-contacts-link {
+		display: flex;
+		vertical-align: center;
+		img {
+			width: 20px;
+			height: 20px;
+			margin-right: 10px;
+		}
+	}
+}

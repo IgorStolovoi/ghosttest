@@ -1,0 +1,89 @@
+{{!< default}}
+
+    {{#post}}
+
+        <main id="site-main" class="site-main">
+            <article class="single-post-page {{post_class}} {{#primary_tag}}{{slug}}{{/primary_tag}}">
+                <div class="container">
+                    {{#primary_tag}}
+                    <ul class="site-breadcrumbs">
+	                    <li class="site-breadcrumbs-item"><a href="{{@site.url}}">Головна</a></li>
+                        <li class="site-breadcrumbs-item"><a href="{{url}}">{{name}}</a></li>
+                    {{/primary_tag}}
+                    <li class="site-breadcrumbs-item"> <span>{{title}}</span></li>
+                    </ul>
+                    <div class="single-post-page-banner">
+                    {{#if feature_image}}
+                    <img
+                        srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 600w,
+                                {{img_url feature_image size="l"}} 1000w,
+                                {{img_url feature_image size="xl"}} 2000w"
+                        sizes="(min-width: 1400px) 1400px, 92vw"
+                        src="{{img_url feature_image size="xl"}}"
+                        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                    />
+                    {{/if}} 
+                    </div>
+                </div>
+                <div class="single-post-page-wrapper white-background">
+                    <div class="single-post-page-general-info top-position">
+                    <div class="single-post-page-general-top">
+                        <div class="single-post-page-date"> 
+                        <time datetime=datetime="{{date format="DD-MM-YYYY"}}">{{date published_at format="DD MMMM, YYYY"}}</time>
+                        </div>
+                {{#if reading_time}}
+                        <span class="single-post-page-reading-time"><span>{{reading_time minute="Приблизно хвилину" minutes=" % хв."}}</span>
+                {{/if}}
+                </div>
+                {{#if featured}}
+                <span class="post-card-featured">{{> "icons/fire"}} У топі</span>
+                {{/if}}
+                    <h1 class="single-post-page-main-title">{{title}}</h1>
+                        <div class="single-post-page-additional-info">
+			            <div class="single-post-page-author">
+                            {{#if primary_author}}
+                                {{#primary_author}}
+                                    {{#if profile_image}}
+                                        <img src="{{profile_image}}" alt="author avatar">
+                                    {{else}}
+                                        <span class="single-post-page-avatar-name">{{name.[0]}}</span>
+                                    {{/if}}
+                                    <span>{{name}}</span>
+                                {{/primary_author}}
+                            {{/if}}
+                        </div>
+                        {{#if @site.comments_enabled}}
+                            {{#if comments}}
+			                    <div class="single-post-page-comments">
+				                    <img src={{asset "built/images/icons/message-icon.svg"}} alt="comment icon">
+                                    <span> {{comment_count}}</span>                               
+			                    </div>
+                            {{/if}}
+                        {{/if}}
+                        </div>
+                       
+            </div>
+            <section class="single-post-page-content">
+                {{content}}
+            </section>
+
+        {{#if @custom.show_recent_posts_footer}}
+            {{#get "posts" includes="authors,tags" filter="id:-{{id}}" limit="4" as |more_posts|}}
+                {{#if more_posts}}
+                    <aside class="more-posts">
+                        <h3 class="more-posts-title">Найновіші публікації</h3>
+                        <div class="more-posts-inner">
+                            {{#foreach more_posts}}
+                                {{> "post-cards/small-post-card"}}
+                            {{/foreach}}
+                        </div>
+                    </aside>
+                {{/if}}
+
+            {{/get}}
+        {{/if}}
+        {{/post}}
+                </div>
+            </article>
+        </main>
